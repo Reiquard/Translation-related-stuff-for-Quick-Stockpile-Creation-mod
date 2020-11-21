@@ -28,7 +28,7 @@
 	<QSC_FloatMenuOption_CreateStockpileSpecFilterCategory>Создать склад для категории "{1}" - '{0}'</QSC_FloatMenuOption_CreateStockpileSpecFilterCategory>
 
 	<QSC_Designator_CreateStockpile_Desc>Создать склад исключительно для этого типа предметов.</QSC_Designator_CreateStockpile_Desc>
-	<QSC_MultipleItem>Несколько предметов</QSC_MultipleItem>
+	<QSC_MultipleItem>несколько предметов</QSC_MultipleItem>
 	<QSC_Message_NoSharedCategories>Для выбранных предметов нет общих категорий.</QSC_Message_NoSharedCategories>
 
 </LanguageData>
