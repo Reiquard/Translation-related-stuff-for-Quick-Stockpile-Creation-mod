@@ -1,0 +1,111 @@
+To author of "Quick Stockpile Creation":
+If you still get to making changes to the code, I have prepared ready-made options for you.
+I have decompiled this mod and made some minor changes regarding translation capability (I dare to hope my actions are OK with you) and hope you find these changes acceptable.
+I have to note also that with these changes applied, English language users will not notice any difference.
+
+Text blocks have the following format:
+
+|Class to replace strings in
+|
+|	/* possible comments to the following paragraph */
+|
+|	paragraph line 1: string of decompiled code
+|	paragraph line 2: string to change previous line
+|	paragraph line 3: keys.xml string (for reference)
+
+
+Extensions.ThingExtensions
+
+	Messages.Message(string.Format("Unable to use a higher priority for new stockpile, item was already in a {0} priority stockpile", ThingExtensions._maximumPriority), MessageTypeDefOf.NegativeEvent, true);
+	Messages.Message("QSC_Message_UnableToUseHigherPriority".Translate(ThingExtensions._maximumPriority.Label()), MessageTypeDefOf.NegativeEvent, true);
+	<QSC_Message_UnableToUseHigherPriority>Unable to use a higher priority for new stockpile, item was already in a {0} priority stockpile</QSC_Message_UnableToUseHigherPriority>
+
+RimObjs.DisallowInStockpile.ReallowInStockpileGizmo
+
+	defaultLabel = "Reallow in stockpile";
+	defaultLabel = "QSC_Designator_Reallow_Label".Translate();
+	<QSC_Designator_Reallow_Label>Reallow in stockpile</QSC_Designator_Reallow_Label>
+
+	defaultDesc = "Reallow this item in its stockpile";
+	defaultDesc = "QSC_Designator_Reallow_Desc".Translate();
+	<QSC_Designator_Reallow_Desc>Reallow this item in its stockpile</QSC_Designator_Reallow_Desc>
+
+	/* although next two lines are the same in the original version, they differ in translation (same goes to other lines like those) */
+
+	Messages.Message(GenText.CapitalizeFirst(_zoneStockpile.label) + " will again allow " + _thingDef.label + " in it", MessageTypeDefOf.SituationResolved, true);
+	Messages.Message("QSC_Message_ReallowThingDef".Translate(_zoneStockpile.label.CapitalizeFirst(), _thingDef.label), MessageTypeDefOf.SituationResolved, true);
+	<QSC_Message_ReallowThingDef>{0} will again allow {1} in it</QSC_Message_ReallowThingDef>
+
+	Messages.Message(GenText.CapitalizeFirst(_zoneStockpile.label) + " will again allow " + _category.label + " in it", MessageTypeDefOf.SituationResolved, true);
+	Messages.Message("QSC_Message_ReallowCategory".Translate(_zoneStockpile.label.CapitalizeFirst(), _category.label), MessageTypeDefOf.SituationResolved, true);
+	<QSC_Message_ReallowCategory>{0} will again allow {1} in it</QSC_Message_ReallowCategory>
+
+RimObjs.DisallowInStockpile.RemoveFromStockpileGizmo
+
+	yield return new FloatMenuOption("Disallow " + category.label + " in its current stockpile", delegate { Process(category); }, (MenuOptionPriority)4);
+	yield return new FloatMenuOption("QSC_FloatMenuOption_DisallowCategory".Translate(category.label), delegate { Process(category); }, (MenuOptionPriority)4);
+	<QSC_FloatMenuOption_DisallowCategory>Disallow {0} in its current stockpile</QSC_FloatMenuOption_DisallowCategory>
+
+	yield return new FloatMenuOption("Disallow " + thing.def.label + " in its current stockpile", )delegate { Process(); }, (MenuOptionPriority)4,);
+	yield return new FloatMenuOption("QSC_FloatMenuOption_DisallowThingDef".Translate(thing.def.label), delegate { Process(); }, (MenuOptionPriority)4,);
+	<QSC_FloatMenuOption_DisallowThingDef>Disallow {0} in its current stockpile</QSC_FloatMenuOption_DisallowThingDef>
+
+	defaultLabel = "Disallow in stockpile";
+	defaultLabel = "QSC_Designator_Disallow_Label".Translate();
+	<QSC_Designator_Disallow_Label>Disallow in stockpile</QSC_Designator_Disallow_Label>
+
+	defaultDesc = "Disallow this item in its current stockpile";
+	defaultDesc = "QSC_Designator_Disallow_Desc".Translate();
+	<QSC_Designator_Disallow_Desc>Disallow this item in its current stockpile</QSC_Designator_Disallow_Desc>
+
+	Messages.Message(GenText.CapitalizeFirst(zone_Stockpile.label) + " will no longer allow " + category.label + " in it", MessageTypeDefOf.SituationResolved, true);
+	Messages.Message("QSC_Message_DisallowThingDef".Translate(zone_Stockpile.label.CapitalizeFirst(), category.label), MessageTypeDefOf.SituationResolved, true);
+	<QSC_Message_DisallowCategory>{0} will no longer allow {1} in it</QSC_Message_DisallowCategory>
+
+	Messages.Message(GenText.CapitalizeFirst(zone_Stockpile.label) + " will no longer allow " + mostInnerThing.def.label + " in it", MessageTypeDefOf.SituationResolved, true);
+	Messages.Message("QSC_Message_DisallowThingDef".Translate(zone_Stockpile.label.CapitalizeFirst(), mostInnerThing.def.label), MessageTypeDefOf.SituationResolved, true);
+	<QSC_Message_DisallowThingDef>{0} will no longer allow {1} in it</QSC_Message_DisallowThingDef>
+
+RimObjs.SmartStockpile.SmartStockpileDesignator
+
+	/* I had to split the next string into two substrings due to translation nuances (since the language structures differs in various languages); and yes, there are Translate() inside another Translate() */
+
+	string text = GenText.CapitalizeFirst(((room.Role.defName != "None" && room.Role.defName != "Room") ? (room.Role.defName.label + " ") : "") + _stockpileContentsLabel) + " stockpile zone";
+	string text = "QSC_Stockpile_Zone".Translate(((room.Role.defName != "None" && room.Role.defName != "Room") ? ("QSC_Stockpile_ZoneRoom".Translate(room.Role.label).ToString()) : ""), _stockpileContentsLabel).CapitalizeFirst();
+	<QSC_Stockpile_Zone>{0}{1} stockpile zone</QSC_Stockpile_Zone>
+	<QSC_Stockpile_ZoneRoom>{0} </QSC_Stockpile_ZoneRoom> <!-- This string is used as the first argument of QSC_Stockpile_Zone -->
+	/* Russian translation strings */
+	<QSC_Stockpile_Zone>Склад "{1}"{0}</QSC_Stockpile_Zone>
+	<QSC_Stockpile_ZoneRoom> - {0}</QSC_Stockpile_ZoneRoom> <!-- This string is used as the first argument of QSC_Stockpile_Zone -->
+
+RimObjs.SmartStockpile.SmartStockpileFloatMenuOption
+
+	: base("Create " + thingDefs.ToLabel() + " stockpile", delegate ()
+	: base("QSC_FloatMenuOption_CreateStockpileThingDef".Translate(thingDefs.ToLabel()), delegate ()
+	<QSC_FloatMenuOption_CreateStockpileThingDef>Create {0} stockpile</QSC_FloatMenuOption_CreateStockpileThingDef>
+
+	: base("Create " + category.label + " stockpile", delegate ()
+	: base("QSC_FloatMenuOption_CreateStockpileCategory".Translate(category.label), delegate ()
+	<QSC_FloatMenuOption_CreateStockpileCategory>Create {0} stockpile</QSC_FloatMenuOption_CreateStockpileCategory>
+
+	: base("Create " + specFilter.GetCleanLabel() + " " + category.label + " stockpile", delegate ()
+	: base("QSC_FloatMenuOption_CreateStockpileSpecFilterCategory".Translate(specFilter.GetCleanLabel(), category.label), delegate ()
+	<QSC_FloatMenuOption_CreateStockpileSpecFilterCategory>Create {0} {1} stockpile</QSC_FloatMenuOption_CreateStockpileSpecFilterCategory>
+
+	: base("Create " + specFilter.GetCleanLabel() + " " + thingDefs.ToLabel() + " stockpile", delegate ()
+	: base("QSC_FloatMenuOption_CreateStockpileSpecFilterThingDef".Translate(specFilter.GetCleanLabel(), thingDefs.ToLabel()), delegate ()
+	<QSC_FloatMenuOption_CreateStockpileSpecFilterThingDef>Create {0} {1} stockpile</QSC_FloatMenuOption_CreateStockpileSpecFilterThingDef>
+
+RimObjs.SmartStockpile.SmartStockpileGizmo
+
+	Messages.Message("There are no shared categories for the items selected.", MessageTypeDefOf.SilentInput, true);
+	Messages.Message("QSC_Message_NoSharedCategories".Translate(), MessageTypeDefOf.SilentInput, true);
+	<QSC_Message_NoSharedCategories>There are no shared categories for the items selected.</QSC_Message_NoSharedCategories>
+
+	defaultDesc = "Create a stockpile specifically for this item type.";
+	defaultDesc = "QSC_Designator_CreateStockpile_Desc".Translate();
+	<QSC_Designator_CreateStockpile_Desc>Create a stockpile specifically for this item type.</QSC_Designator_CreateStockpile_Desc>
+
+	SmartStockpileDesignator(enumerable, haulableThingsFromSelectedItems.First().GetNewSmartStockpilePriority(), (enumerable.Count() == 1) ? enumerable.Single().label : "Multiple item");
+	SmartStockpileDesignator(enumerable, haulableThingsFromSelectedItems.First().GetNewSmartStockpilePriority(), (enumerable.Count() == 1) ? enumerable.Single().label : "QSC_MultipleItem".Translate().ToString());
+	<QSC_MultipleItem>Multiple item</QSC_MultipleItem>
