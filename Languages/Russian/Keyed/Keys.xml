@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<QSC_Message_UnableToUseHigherPriority>Невозможно использовать более высокий приоритет для нового склада, предмет уже находится на складе с приоритетом "{0}"</QSC_Message_UnableToUseHigherPriority>
+
+	<QSC_Designator_Reallow_Label>Разрешить на складе</QSC_Designator_Reallow_Label>
+	<QSC_Designator_Reallow_Desc>Разрешить этот предмет на текущем складе.</QSC_Designator_Reallow_Desc>
+	<QSC_Message_ReallowThingDef>"{0}" снова принимает предмет "{1}"</QSC_Message_ReallowThingDef>
+	<QSC_Message_ReallowCategory>"{0}" снова принимает категорию "{1}"</QSC_Message_ReallowCategory>
+
+	<QSC_Designator_Disallow_Label>Запретить на складе</QSC_Designator_Disallow_Label>
+	<QSC_Designator_Disallow_Desc>Запретить этот предмет на текущем складе.</QSC_Designator_Disallow_Desc>
+	<QSC_FloatMenuOption_DisallowThingDef>Запретить предмет "{0}" на текущем складе</QSC_FloatMenuOption_DisallowThingDef>
+	<QSC_FloatMenuOption_DisallowCategory>Запретить категорию "{0}" на текущем складе</QSC_FloatMenuOption_DisallowCategory>
+	<QSC_Message_DisallowThingDef>"{0}" больше не принимает предмет "{1}"</QSC_Message_DisallowThingDef>
+	<QSC_Message_DisallowCategory>"{0}" больше не принимает категорию "{1}"</QSC_Message_DisallowCategory>
+
+	<QSC_Stockpile_Zone>Склад "{1}"{0}</QSC_Stockpile_Zone>
+	<QSC_Stockpile_ZoneRoom> - {0}</QSC_Stockpile_ZoneRoom> <!-- This string is used as the first argument of QSC_Stockpile_Zone -->
+	
+	<QSC_FloatMenuOption_CreateStockpileThingDef>Создать склад для предмета "{0}"</QSC_FloatMenuOption_CreateStockpileThingDef>
+	<QSC_FloatMenuOption_CreateStockpileCategory>Создать склад для категории "{0}"</QSC_FloatMenuOption_CreateStockpileCategory>
+	<QSC_FloatMenuOption_CreateStockpileSpecFilterThingDef>Создать склад для предмета "{1}" - '{0}'</QSC_FloatMenuOption_CreateStockpileSpecFilterThingDef>
+	<QSC_FloatMenuOption_CreateStockpileSpecFilterCategory>Создать склад для категории "{1}" - '{0}'</QSC_FloatMenuOption_CreateStockpileSpecFilterCategory>
+
+	<QSC_Designator_CreateStockpile_Desc>Создать склад исключительно для этого типа предметов.</QSC_Designator_CreateStockpile_Desc>
+	<QSC_MultipleItem>Несколько предметов</QSC_MultipleItem>
+	<QSC_Message_NoSharedCategories>Для выбранных предметов нет общих категорий.</QSC_Message_NoSharedCategories>
+
+</LanguageData>

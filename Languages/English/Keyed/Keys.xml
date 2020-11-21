@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<QSC_Message_UnableToUseHigherPriority>Unable to use a higher priority for new stockpile, item was already in a {0} priority stockpile</QSC_Message_UnableToUseHigherPriority>
+
+	<QSC_Designator_Reallow_Label>Reallow in stockpile</QSC_Designator_Reallow_Label>
+	<QSC_Designator_Reallow_Desc>Reallow this item in its stockpile</QSC_Designator_Reallow_Desc>
+	<QSC_Message_ReallowThingDef>{0} will again allow {1} in it</QSC_Message_ReallowThingDef>
+	<QSC_Message_ReallowCategory>{0} will again allow {1} in it</QSC_Message_ReallowCategory>
+
+	<QSC_Designator_Disallow_Label>Disallow in stockpile</QSC_Designator_Disallow_Label>
+	<QSC_Designator_Disallow_Desc>Disallow this item in its current stockpile</QSC_Designator_Disallow_Desc>
+	<QSC_FloatMenuOption_DisallowThingDef>Disallow {0} in its current stockpile</QSC_FloatMenuOption_DisallowThingDef>
+	<QSC_FloatMenuOption_DisallowCategory>Disallow {0} in its current stockpile</QSC_FloatMenuOption_DisallowCategory>
+	<QSC_Message_DisallowThingDef>{0} will no longer allow {1} in it</QSC_Message_DisallowThingDef>
+	<QSC_Message_DisallowCategory>{0} will no longer allow {1} in it</QSC_Message_DisallowCategory>
+
+	<QSC_Stockpile_Zone>{0}{1} stockpile zone</QSC_Stockpile_Zone>
+	<QSC_Stockpile_ZoneRoom>{0} </QSC_Stockpile_ZoneRoom> <!-- This string is used as the first argument of QSC_Stockpile_Zone -->
+	
+	<QSC_FloatMenuOption_CreateStockpileThingDef>Create {0} stockpile</QSC_FloatMenuOption_CreateStockpileThingDef>
+	<QSC_FloatMenuOption_CreateStockpileCategory>Create {0} stockpile</QSC_FloatMenuOption_CreateStockpileCategory>
+	<QSC_FloatMenuOption_CreateStockpileSpecFilterThingDef>Create {0} {1} stockpile</QSC_FloatMenuOption_CreateStockpileSpecFilterThingDef>
+	<QSC_FloatMenuOption_CreateStockpileSpecFilterCategory>Create {0} {1} stockpile</QSC_FloatMenuOption_CreateStockpileSpecFilterCategory>
+
+	<QSC_Designator_CreateStockpile_Desc>Create a stockpile specifically for this item type.</QSC_Designator_CreateStockpile_Desc>
+	<QSC_MultipleItem>Multiple item</QSC_MultipleItem>
+	<QSC_Message_NoSharedCategories>There are no shared categories for the items selected.</QSC_Message_NoSharedCategories>
+
+</LanguageData>
