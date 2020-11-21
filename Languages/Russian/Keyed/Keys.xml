@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+	<Quick_Stockpile_Creation>Quick Stockpile Creation</Quick_Stockpile_Creation>
+	<QSC_Settings_NewStockpilesPriority>Создавать новые склады с этим приоритетом:</QSC_Settings_NewStockpilesPriority>
+	<QSC_Settings_HigherPriority>Если предмет уже находится на складе, создать для него другой склад с более высоким приоритетом, переопределяя значение выше:</QSC_Settings_HigherPriority>
+
 	<QSC_Message_UnableToUseHigherPriority>Невозможно использовать более высокий приоритет для нового склада, предмет уже находится на складе с приоритетом "{0}"</QSC_Message_UnableToUseHigherPriority>
 
 	<QSC_Designator_Reallow_Label>Разрешить на складе</QSC_Designator_Reallow_Label>

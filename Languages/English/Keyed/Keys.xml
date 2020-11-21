@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+	<Quick_Stockpile_Creation>Quick Stockpile Creation</Quick_Stockpile_Creation>
+	<QSC_Settings_NewStockpilesPriority>Create new stockpiles at this priority:</QSC_Settings_NewStockpilesPriority>
+	<QSC_Settings_HigherPriority>Where items are already in stockpiles, create a stockpile at a higher priority, overriding the value above:</QSC_Settings_HigherPriority>
+
 	<QSC_Message_UnableToUseHigherPriority>Unable to use a higher priority for new stockpile, item was already in a {0} priority stockpile</QSC_Message_UnableToUseHigherPriority>
 
 	<QSC_Designator_Reallow_Label>Reallow in stockpile</QSC_Designator_Reallow_Label>
