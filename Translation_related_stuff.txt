@@ -16,6 +16,8 @@ Text blocks have the following format:
 
 Extensions.ThingExtensions
 
+	/* note that .Label() is added to ThingExtensions._maximumPriority to catch the translation */
+
 	Messages.Message(string.Format("Unable to use a higher priority for new stockpile, item was already in a {0} priority stockpile", ThingExtensions._maximumPriority), MessageTypeDefOf.NegativeEvent, true);
 	Messages.Message("QSC_Message_UnableToUseHigherPriority".Translate(ThingExtensions._maximumPriority.Label()), MessageTypeDefOf.NegativeEvent, true);
 	<QSC_Message_UnableToUseHigherPriority>Unable to use a higher priority for new stockpile, item was already in a {0} priority stockpile</QSC_Message_UnableToUseHigherPriority>
